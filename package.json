@@ -35,6 +35,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "bootstrap": "^3.3.6",
     "bulma": "0.0.24",
     "jquery": "^2.2.3"
   }
