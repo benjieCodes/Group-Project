@@ -1,7 +1,7 @@
 import $ from "jquery";
 
-
-// Working on the Testimony div
+// BENJIES CURRENT WORK FOR THE TESTIMONY DIV
+// DO NOT ERASE
 var randomUserBaseURL = "http://api.randomuser.me/";
 var ruUserAmount = "?results=3"; // Pulling 3 users
 var ruFinalURL = randomUserBaseURL + ruUserAmount;
@@ -14,3 +14,8 @@ $.getJSON(ruFinalURL).then(function (response){
     })
 
 });
+
+
+<!----------------------------------------------
+// Don't know who's work this is but I kept it on there.
+$('.carousel').carousel();
