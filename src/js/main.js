@@ -8,55 +8,35 @@ var ruURL = randomUserBaseURL;
 
 var testimonyURL = 'https://json-data.herokuapp.com/darts/testimonials';
 
-// variable used to push each user image to this array
+// variables used to call function into objects to pull into this array
 var users = [];
+var testimonials = [];
 
-setTimeout(function (){
-    console.log('users', users);
+
+
+// ON PAGE LOAD FUNCTIONS
+getUsers();
+getTestimonials();
+setTimeout( function() {
+  buildObject();
 }, 1000);
+
+
+
+
+// FUNCTION DEFINITIONS
 // Made a function in order to be able to get the correct gender order each time
-ruGenders.forEach (function (gender){
-    var ruFinalURL = ruURL + gender;
+function getUsers () {
+  ruGenders.forEach (function (gender){
+  var ruFinalURL = ruURL + gender;
     $.getJSON(ruFinalURL).then(function(response){
       var user = response.results[0];
       users.push(user)
     });
-});
-// variable used to push each testimonial object to this array
-var testimonials = [];
-
-var companyURL = 'https://json-data.herokuapp.com/darts/companies';
-
-var testimonyURL = 'https://json-data.herokuapp.com/darts/testimonials';
-
-// Pulling API using .getJSON
-// $.getJSON(ruFinalURL).then(function (response){
-//     response.results.forEach(function (res){
-//       var html = getUser(res);
-//       $('.Testimonial').append(html);
-//     })
-
-$.getJSON(testimonyURL).then(function (response){
-  console.log(response);
-    response.results.filter(function (res){
-      var html = getTestimony(res);
-      $('.users').append(html);
-    })
-})
-
-// });
+  });
+}
 
 
-// on page load
-getTestimonials();
-
-
-// it takes longer for an API request compared to just a variable
-setTimeout( function() {
-  console.log('testimonials', testimonials);
-}, 1000);
-
-// defining function
 function getTestimonials() {
   $.getJSON(testimonyURL).then(function(response){
     response.results.forEach(function(testimonial){
@@ -65,15 +45,38 @@ function getTestimonials() {
   });
 };
 
-function getTestimony (testimony) {
+
+
+function buildObject () {
+  console.log(users);
+  console.log(testimonials);
+
+  }
+
+
+
+function testimonialTemplate () {
   return `
-          <li>${testimony.name}</li>
-          <li>${testimony.review}</li>
+          <ul class="users">
+            <li class="userImage">${users.picture.large}</li>
+            <li class="userName">${testimonials.name}</li>
+            <li class="userReview">${testimonials.review}</li>
+          </ul>
   `;
-}
+  $('.testimonialuser').append(testimonialTemplate());
+};
+
+
+
+
+
+
 // ---------------------------------------------------------------------------------------------------//
 //Jeff code for company block
 //interpolate company info so it can be accessed
+
+var companyURL = 'https://json-data.herokuapp.com/darts/companies';
+
 var companyTemplate = function(company) {
   return `
   <div class= companies>
@@ -91,3 +94,4 @@ $.getJSON(companyURL).then (function(res){
     var html = companyTemplate(company);
     $('.container').append(html);
   })
+});
