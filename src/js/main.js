@@ -62,7 +62,7 @@ function buildObject () {
       name: testimonial.name,
       review: testimonial.review
     };
-    
+
     var html = testimonialTemplate(object)
     $('.testimonialuser').append(html);
   }
@@ -92,9 +92,7 @@ var companyURL = 'https://json-data.herokuapp.com/darts/companies';
 
 var companyTemplate = function(company) {
   return `
-  <div class= companies>
   <img src="${company.image_url}" alt="" />
-  </div>
   `
 }
 
@@ -102,9 +100,12 @@ $.getJSON(companyURL).then (function(res){
   // console.log(res);
   res.results.forEach(function(company){
 
-
     // console.log(company.image_url);
     var html = companyTemplate(company);
-    $('.container').append(html);
-  })
+
+    $('.companies').append(html);
+  });
+
+
+
 });
