@@ -51,19 +51,32 @@ function buildObject () {
   console.log(users);
   console.log(testimonials);
 
+  for (var count = 0; count < users.length; count++) {
+    console.log(count);
+    var index = count;
+    var user = users[index];
+    var testimonial = testimonials[index];
+
+    var object = {
+      image: user.picture.large,
+      name: testimonial.name,
+      review: testimonial.review
+    };
+    
+    var html = testimonialTemplate(object)
+    $('.testimonialuser').append(html);
   }
 
+}
 
-
-function testimonialTemplate () {
+function testimonialTemplate (object) {
   return `
           <ul class="users">
-            <li class="userImage">${users.picture.large}</li>
-            <li class="userName">${testimonials.name}</li>
-            <li class="userReview">${testimonials.review}</li>
+            <li class="userImage"><img src="${object.image}"</li>
+            <li class="userName">${object.name}</li>
+            <li class="userReview">${object.review}</li>
           </ul>
   `;
-  $('.testimonialuser').append(testimonialTemplate());
 };
 
 
