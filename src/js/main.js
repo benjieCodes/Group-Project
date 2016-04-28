@@ -1,14 +1,15 @@
 import $ from 'jquery';
 
+var companyURL = 'https://json-data.herokuapp.com/darts/companies';
 
 var testimonyURL = 'https://json-data.herokuapp.com/darts/testimonials';
 
 // Pulling API using .getJSON
-$.getJSON(ruFinalURL).then(function (response){
-    response.results.forEach(function (res){
-      var html = getUser(res);
-      $('.Testimonial').append(html);
-    })
+// $.getJSON(ruFinalURL).then(function (response){
+//     response.results.forEach(function (res){
+//       var html = getUser(res);
+//       $('.Testimonial').append(html);
+//     })
 $.getJSON(testimonyURL).then(function (response){
   console.log(response);
     response.results.filter(function (res){
@@ -17,7 +18,7 @@ $.getJSON(testimonyURL).then(function (response){
     })
 })
 
-});
+// });
 
 function getUser (user) {
   return `
@@ -33,8 +34,19 @@ function getTestimony (testimony) {
           <li>${testimony.review}</li>
   `;
 }
+//Jeff code for company block
+$.getJSON(companyURL).then (function(res){
+  // console.log(res);
+  res.results.forEach(function(company){
 
+    console.log(company.image_url);
+    // var html = getCompany(res)
+
+  })
+
+
+});
 
 
 // Don't know who's work this is but I kept it on there.
-$('.carousel').carousel();
+// $('.carousel').carousel();
