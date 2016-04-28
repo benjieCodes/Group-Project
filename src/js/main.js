@@ -10,6 +10,7 @@ var testimonyURL = 'https://json-data.herokuapp.com/darts/testimonials';
 //       var html = getUser(res);
 //       $('.Testimonial').append(html);
 //     })
+
 $.getJSON(testimonyURL).then(function (response){
   console.log(response);
     response.results.filter(function (res){
@@ -35,18 +36,22 @@ function getTestimony (testimony) {
   `;
 }
 //Jeff code for company block
+
+//interpolate company info so it can be accessed
+var companyTemplate = function(company) {
+  return `
+  <img src="${company.image_url}" alt="" />
+  `
+}
+
 $.getJSON(companyURL).then (function(res){
   // console.log(res);
   res.results.forEach(function(company){
 
-    console.log(company.image_url);
-    // var html = getCompany(res)
-
+    // console.log(company.image_url);
+    var html = companyTemplate(company);
+    $('.container').append(html);
   })
 
 
 });
-
-
-// Don't know who's work this is but I kept it on there.
-// $('.carousel').carousel();
