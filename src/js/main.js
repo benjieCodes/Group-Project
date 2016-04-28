@@ -40,7 +40,9 @@ function getTestimony (testimony) {
 //interpolate company info so it can be accessed
 var companyTemplate = function(company) {
   return `
+  <div class= companies>
   <img src="${company.image_url}" alt="" />
+  </div>
   `
 }
 
