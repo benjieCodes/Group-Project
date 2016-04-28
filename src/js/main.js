@@ -1,4 +1,4 @@
-import $ from "jquery";
+import $ from 'jquery';
 
 // BENJIES CURRENT WORK FOR THE TESTIMONY DIV
 // DO NOT ERASE
@@ -25,8 +25,31 @@ ruGenders.forEach (function (gender){
 // variable used to push each testimonial object to this array
 var testimonials = [];
 
+var companyURL = 'https://json-data.herokuapp.com/darts/companies';
+
+var testimonyURL = 'https://json-data.herokuapp.com/darts/testimonials';
+
+// Pulling API using .getJSON
+// $.getJSON(ruFinalURL).then(function (response){
+//     response.results.forEach(function (res){
+//       var html = getUser(res);
+//       $('.Testimonial').append(html);
+//     })
+
+$.getJSON(testimonyURL).then(function (response){
+  console.log(response);
+    response.results.filter(function (res){
+      var html = getTestimony(res);
+      $('.users').append(html);
+    })
+})
+
+// });
+
+
 // on page load
 getTestimonials();
+
 
 // it takes longer for an API request compared to just a variable
 setTimeout( function() {
@@ -42,62 +65,29 @@ function getTestimonials() {
   });
 };
 
+function getTestimony (testimony) {
+  return `
+          <li>${testimony.name}</li>
+          <li>${testimony.review}</li>
+  `;
+}
+// ---------------------------------------------------------------------------------------------------//
+//Jeff code for company block
+//interpolate company info so it can be accessed
+var companyTemplate = function(company) {
+  return `
+  <div class= companies>
+  <img src="${company.image_url}" alt="" />
+  </div>
+  `
+}
 
-// $.getJSON(ruFinalURL).then(function (response){
-//       var users = response.results;
-//       console.log('users:', users);
-//       users.forEach(function (user){
-//         console.log(user)
-//       });
-//     });
+$.getJSON(companyURL).then (function(res){
+  // console.log(res);
+  res.results.forEach(function(company){
 
-//     $.getJSON(testimonyURL).then(function (response){
-//         var testimonials = response.results;
-//         console.log('testimonials: ', testimonials);
-//       });
-// });
-      // var html = userTemplate(user);
-      // $('.Testimonial').append(html);
-    // I want to grab each testimonial and put one testimony on each user
-    // testimonials.forEach(function (testimonial){
-//       var html = testimonyTemplate(testimonial);
-//       $('.users').append(html);
-//     })
-// })
-//
-// });
-//
-// function userTemplate (user) {
-//   return `
-//           <ul class="users">
-//           <li><img src=${user.picture.large}></li>
-//           </ul>
-//   `;
-// }
-//
-// function testimonyTemplate (testimony) {
-//   return `
-//           <li>${testimony.name}</li>
-//           <li>${testimony.review}</li>
-//   `;
-// }
-//
-// var testimonyCOunt = 0;
-// var numOfUsers = 3;
-// function placeTestimony () {
-//   if (count < numOfUsers.length) {
-//     console.log('function called');
-//     var current = testimonials.indexOf(count)
-//     console.log(current);
-//     count = count + 1;
-//     console.log(count);
-//   }
-//   else {
-//     console.log('testimonials are done');
-//   }
-// }
-//
-//
-//
-// // Don't know who's work this is but I kept it on there.
-// $('.carousel').carousel();
+
+    // console.log(company.image_url);
+    var html = companyTemplate(company);
+    $('.container').append(html);
+  })
