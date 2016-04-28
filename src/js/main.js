@@ -135,8 +135,7 @@ $.getJSON(companyURL).then (function(res){
     // console.log(company.image_url);
     var html = companyTemplate(company);
 
-    $('.container').append(html);
+    $('.companies').append(html);
   });
 
-    $('.companies').append(html);
   });
