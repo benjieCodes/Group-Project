@@ -1,7 +1,9 @@
 
 @import 'bootstrap';
 
-
+body {
+  background-color: lightyellow;
+}
 header {
   width: 100%;}
 
@@ -26,3 +28,8 @@ header {
     border-radius: 50px;
     margin-bottom: 50px;}
 // -----------------------------------------------------HEADER>>>>>>>>
+
+.title {
+  font-size: 30px;
+  text-align: center;
+}
