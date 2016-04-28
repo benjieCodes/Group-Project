@@ -1,5 +1,37 @@
 import $ from 'jquery';
 
+// --------------------------------------------PRODUCT info NISA SECTION 1
+
+var proInfoURL = 'https://json-data.herokuapp.com/darts/info';
+
+ $.getJSON(proInfoURL).then(function (response){
+  //  console.log(response);
+  var title = response.data.product.title;
+  //  console.log('title:   ', title);
+  var des = response.data.product.description;
+  // console.log(des);
+  console.log(infoTemplate(title, des));
+
+  var html = infoTemplate(title, des);
+
+  $(".CompanyInfo").append(html);
+
+});
+
+
+
+
+// generates a html template
+function infoTemplate(title, des){
+  return `
+    <span class="title">${title}</span>
+    <p class="description">${des}</p>`
+
+
+
+}
+
+// console.log(infoTemplate (info);
 // BENJIES CURRENT WORK FOR THE TESTIMONY DIV
 // DO NOT ERASE
 var randomUserBaseURL = "http://api.randomuser.me/";
@@ -90,4 +122,5 @@ $.getJSON(companyURL).then (function(res){
     // console.log(company.image_url);
     var html = companyTemplate(company);
     $('.container').append(html);
-  })
+  });
+});
