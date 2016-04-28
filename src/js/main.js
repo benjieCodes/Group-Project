@@ -35,7 +35,7 @@ function infoTemplate(title, des){
 // BENJIES CURRENT WORK FOR THE TESTIMONY DIV
 // DO NOT ERASE
 var randomUserBaseURL = "http://api.randomuser.me/";
-var ruGenders = ["?gender=female","?gender=male","?gender=male"];
+var ruGenders = ["?gender=female","?gender=female","?gender=male"];
 var ruURL = randomUserBaseURL;
 
 var testimonyURL = 'https://json-data.herokuapp.com/darts/testimonials';
@@ -93,8 +93,7 @@ function buildObject () {
       review: testimonial.review
     };
 
-    var html = testimonialTemplate(object)
-    $('.testimonialuser').append(html);
+    $('.testimonialuser').append(testimonialTemplate(object));
   }
 
 }
@@ -104,7 +103,7 @@ function testimonialTemplate (object) {
           <ul class="users">
             <li class="userImage"><img src="${object.image}"</li>
             <li class="userName">${object.name}</li>
-            <li class="userReview">${object.review}</li>
+            <li class="userReview">"${object.review}"</li>
           </ul>
   `;
 };

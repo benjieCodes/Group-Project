@@ -1,5 +1,22 @@
 @import "bootstrap";
 
+
+
+.testimonialuser {
+  background-color: RGBA(255, 165, 0, .25);
+}
+.users {
+  list-style: none;
+  display: inline;
+
+  text-align: center;
+}
+
+.userImage img {
+  border-radius: 100%;
+  border: 3px solid RGBA(255, 165, 0, 1.00);
+}
+
 .googlemap {
   width: 100%;
 }
