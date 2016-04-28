@@ -48,8 +48,6 @@ function getTestimonials() {
 
 
 function buildObject () {
-  console.log(users);
-  console.log(testimonials);
 
   for (var count = 0; count < users.length; count++) {
     console.log(count);
