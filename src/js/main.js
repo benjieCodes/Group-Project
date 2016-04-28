@@ -76,9 +76,7 @@ function getTestimony (testimony) {
 //interpolate company info so it can be accessed
 var companyTemplate = function(company) {
   return `
-  <div class= companies>
   <img src="${company.image_url}" alt="" />
-  </div>
   `
 }
 
@@ -86,8 +84,9 @@ $.getJSON(companyURL).then (function(res){
   // console.log(res);
   res.results.forEach(function(company){
 
-
     // console.log(company.image_url);
     var html = companyTemplate(company);
-    $('.container').append(html);
-  })
+    $('.companies').append(html);
+  });
+
+});
