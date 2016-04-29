@@ -5,3 +5,15 @@
   width: 20%;
   padding: 10px 2%;
 }
+
+.carouselImage {
+    display:none;
+  img {
+    width: 40%;
+  }
+}
+
+.active {
+  display: block;
+  padding: 10px;
+}
