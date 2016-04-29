@@ -145,15 +145,22 @@ $.getJSON(companyURL).then (function(res){
 
 
         if (current.hasClass('last')) {
-          console.log('restart');
           first.addClass('active')
           last.removeClass('active')
 
         } else {
-          console.log('next class');
           current.removeClass('active');
           next.addClass('active');
         }
 
     };
     setInterval(moveCarousel, 4000);
+
+
+// creating a function to display a pop up when button 'Add to Cart' is clicked
+var cartButton = $('button');
+
+//When I click the button it will show up as clicked
+cartButton.on('click', function (event){
+  alert ('WOOOOOO');
+})
