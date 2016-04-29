@@ -1,14 +1,17 @@
 @import "bootstrap";
 
 
-
-.testimonialuser {
+.testimonial {
+  width: 100%;
   background-color: RGBA(255, 165, 0, .25);
+  text-align: center;
+  overflow: auto;
 }
-.users {
-  list-style: none;
-  display: inline;
 
+.users {
+  float: left;
+  width: 33%;
+  list-style: none;
   text-align: center;
 }
 
@@ -17,6 +20,17 @@
   border: 3px solid RGBA(255, 165, 0, 1.00);
 }
 
+.userName {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px 0;
+  border-bottom: 2px solid RGBA(255, 165, 0, 1.00);
+}
+
+.userReview {
+  font-style: italic;
+  font-weight: bold;
+}
 .googlemap {
   width: 100%;
 }
