@@ -2,7 +2,7 @@
 @import 'bootstrap';
 
 body {
-  background-color: lightorange;
+  background-color: lightyellow;
   margin: 0px;
 }
 header {
@@ -29,31 +29,48 @@ header {
     border-radius: 50px;
     margin-bottom: 50px;
   }
-   //-------------------------------------------------HEADER>>>>
+   //---------------------------------------------HEADER>>>>
 
 .title {
   font-size: 30px;
   text-align: center;
 }
-// ----------------------------------------------SECTION 1 >>>>>
+// ------------------------------------------SECTION 1 >>>>>
 footer {
   background-color: grey;
   display: inline-block;
   width: 100%;
+  text-align: center;
 }
-.meaning {
-}
+
+
 .cap {
   font-size: 30px;
   color: white;
-  float: left;
+  color: orange;
+  text-align: center;
+  margin-left: 20px;
 }
-
 .low {
   text-align: center;
-  float: left;
+  margin-top: 10px;
+  color: white;
+}
+
+.footpic {
+  width: 100px;
+  height: 100px;
+  background: red;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  margin-bottom: 50px;
+  margin-top: 20px;
+
 }
 
 
 
-// -------------------------------------------------FOOTER>>>>
+
+
+// ---------------------------------------------FOOTER>>>>
