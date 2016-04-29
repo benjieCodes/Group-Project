@@ -145,7 +145,7 @@ $.getJSON(companyURL).then (function(res){
 
 
         if (current.hasClass('last')) {
-          console.log('restart');
+          // console.log('restart');
           first.addClass('active')
           last.removeClass('active')
 
