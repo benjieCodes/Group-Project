@@ -19,17 +19,12 @@ var proInfoURL = 'https://json-data.herokuapp.com/darts/info';
 });
 
 
-
-
 // generates a html template
 function infoTemplate(title, des){
   return `
     <span class="title">${title}</span>
     <p class="description">${des}</p>`
-
-
-
-}
+};
 
 // console.log(infoTemplate (info);
 // BENJIES CURRENT WORK FOR THE TESTIMONY DIV
