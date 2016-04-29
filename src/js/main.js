@@ -10,7 +10,7 @@ var proInfoURL = 'https://json-data.herokuapp.com/darts/info';
   //  console.log('title:   ', title);
   var des = response.data.product.description;
   // console.log(des);
-  console.log(infoTemplate(title, des));
+  // console.log(infoTemplate(title, des));
 
   var html = infoTemplate(title, des);
 
@@ -77,7 +77,7 @@ function getTestimonials() {
 function buildObject () {
 
   for (var count = 0; count < users.length; count++) {
-    console.log(count);
+    // console.log(count);
     var index = count;
     var user = users[index];
     var testimonial = testimonials[index];
@@ -131,3 +131,29 @@ $.getJSON(companyURL).then (function(res){
   });
 
   });
+
+
+//creating a function to run at an interval changing the carousel picture
+  function moveCarousel() {
+        var first     = $('.first');
+        var last      = $('.last');
+        var current   = $('.active');
+        //next is the immediate next sibling of the displayed photo
+        var next      = current.next();
+
+        //remove active class from current photo and add the next photo
+
+
+        if (current.hasClass('last')) {
+          console.log('restart');
+          first.addClass('active')
+          last.removeClass('active')
+
+        } else {
+          console.log('next class');
+          current.removeClass('active');
+          next.addClass('active');
+        }
+
+    };
+    setInterval(moveCarousel, 4000);
