@@ -132,7 +132,7 @@ $.getJSON(companyURL).then (function(res){
 
   });
 
-
+// Carousel------------------------------------------------
 //creating a function to run at an interval changing the carousel picture
   function moveCarousel() {
         var first     = $('.first');
@@ -141,20 +141,19 @@ $.getJSON(companyURL).then (function(res){
         //next is the immediate next sibling of the displayed photo
         var next      = current.next();
 
-        //remove active class from current photo and add the next photo
-
-
+        
         if (current.hasClass('last')) {
           first.addClass('active')
           last.removeClass('active')
 
+          //remove active class from current photo and add the next photo
         } else {
           current.removeClass('active');
           next.addClass('active');
         }
 
     };
-    setInterval(moveCarousel, 4000);
+    setInterval(moveCarousel, 3000);
 
 
 // creating a function to display a pop up when button 'Add to Cart' is clicked
