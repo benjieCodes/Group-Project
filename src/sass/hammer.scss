@@ -6,11 +6,13 @@
   padding: 10px 2%;
 }
 
+.carousel {
+  img {
+    width: 50%;
+  }
+}
 .carouselImage {
     display:none;
-  img {
-    width: 40%;
-  }
 }
 
 .active {
