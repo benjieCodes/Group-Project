@@ -3,6 +3,7 @@
 
 body {
   background-color: lightorange;
+  margin: 0px;
 }
 header {
   width: 100%;}
@@ -28,9 +29,31 @@ header {
     border-radius: 50px;
     margin-bottom: 50px;
   }
-   //-----------------------------------------------------HEADER>>>>
+   //-------------------------------------------------HEADER>>>>
 
 .title {
   font-size: 30px;
   text-align: center;
 }
+// ----------------------------------------------SECTION 1 >>>>>
+footer {
+  background-color: grey;
+  display: inline-block;
+  width: 100%;
+}
+.meaning {
+}
+.cap {
+  font-size: 30px;
+  color: white;
+  float: left;
+}
+
+.low {
+  text-align: center;
+  float: left;
+}
+
+
+
+// -------------------------------------------------FOOTER>>>>
