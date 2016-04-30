@@ -14,7 +14,7 @@ var proInfoURL = 'https://json-data.herokuapp.com/darts/info';
 
   var html = infoTemplate(title, des);
 
-  $(".CompanyInfo").append(html);
+  $(".companyInfo").append(html);
 
 });
 
