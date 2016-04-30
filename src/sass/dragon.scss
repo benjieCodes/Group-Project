@@ -32,7 +32,8 @@
   font-weight: bold;
 }
 
-.popup{
+.popup {
+  overflow: auto;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -45,13 +46,13 @@
 
 .popupContent {
   color: orange;
-  font-size: 35px;
+  font-size: 2.3em;
   text-align: center;
   background: RGBA(195, 200, 204, 1.00);
   border-radius: 10px;
   margin: 20% auto;
-  width: 55%;
-  height: 150px;
+  width: 60%;
+  height: 50%;
   padding: 20px;
   position: relative;
 
