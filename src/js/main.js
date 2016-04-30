@@ -174,17 +174,20 @@ $.getJSON(companyURL).then (function(res){
 
 
 // creating a function to display a pop up when button 'Add to Cart' is clicked
-var popupWindow = $('.popupWindow');
+var popup = $('.popup');
 var showPopupButton = $('.showPopup');
-var closePopup = $('.closePopup');
-var popupWindow =
-
+var popupWindow = $('#popupWindow');
 
 //When I click the button it will show up as clicked
 showPopupButton.on('click', function () {
-  popupWindow.removeClass('hidden');
+  
+  popupWindow.showModal();
 });
 
-closePopup.on('click', function (){
-  popupWindow.addClass('hidden');
-})
+
+
+function showPopup () {
+  return `
+
+  `;
+}
