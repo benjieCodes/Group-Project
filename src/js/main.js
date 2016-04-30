@@ -133,15 +133,19 @@ var companyTemplate = function(company) {
   `
 }
 
+var mapHeader = function() {
+  return `
+    <h2>Here's our location - come stalk us!</h2>
+  `;
+}
+
 $.getJSON(companyURL).then (function(res){
-  // console.log(res);
   res.results.forEach(function(company){
-
-    // console.log(company.image_url);
     var html = companyTemplate(company);
-
     $('.companies').append(html);
   });
+
+    $('.companies').append(mapHeader());
 
   });
 
@@ -170,9 +174,10 @@ $.getJSON(companyURL).then (function(res){
 
 
 // creating a function to display a pop up when button 'Add to Cart' is clicked
+var popupWindow = $('.popupWindow');
 var showPopupButton = $('.showPopup');
 var closePopup = $('.closePopup');
-var popupWindow = $('body')
+var popupWindow =
 
 
 //When I click the button it will show up as clicked
