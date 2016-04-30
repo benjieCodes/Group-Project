@@ -1,5 +1,13 @@
 @import "bootstrap";
 
+.main {
+  float: left;
+}
+
+.searchContainer {
+  float: left;
+  width: 50%;
+}
 
 .testimonial {
   width: 100%;
@@ -42,6 +50,10 @@
   height: 100%;
   background-color: black;
   opacity: .9;
+}
+
+.popup .hidden {
+  display: none;
 }
 
 .popupContent {
