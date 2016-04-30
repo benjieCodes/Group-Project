@@ -43,9 +43,12 @@ var testimonials = [];
 
 // ON PAGE LOAD FUNCTIONS
 getUsers();
+setTimeout( function() {
+  sortUsers();
+}, 500);
 getTestimonials();
 setTimeout( function() {
-  buildObject();
+  buildFinalTemplate();
 }, 1000);
 
 
@@ -64,6 +67,16 @@ function getUsers () {
 }
 
 
+function sortUsers () {
+  users.sort(function(user) {
+    if (user.gender === 'female') {
+      return -1;
+    } else {
+      return 1;
+    }
+  });
+}
+
 function getTestimonials() {
   $.getJSON(testimonyURL).then(function(response){
     response.results.forEach(function(testimonial){
@@ -74,7 +87,7 @@ function getTestimonials() {
 
 
 
-function buildObject () {
+function buildFinalTemplate () {
 
   for (var count = 0; count < users.length; count++) {
     // console.log(count);
@@ -141,7 +154,7 @@ $.getJSON(companyURL).then (function(res){
         //next is the immediate next sibling of the displayed photo
         var next      = current.next();
 
-        
+
         if (current.hasClass('last')) {
           first.addClass('active')
           last.removeClass('active')
