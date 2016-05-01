@@ -71,6 +71,26 @@
 
 }
 
+.showPopup {
+  padding: 10px;
+  float: right;
+  background: orange;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+
+
+.socialIcons i {
+  font-size: 20px;
+  padding: 10px;
+
+  &:hover {
+    color: orange;
+    cursor: pointer;
+    padding: 11px;
+  }
+}
+
 .closePopup {
   color: white;
   width: 23px;
@@ -86,7 +106,9 @@
   cursor: pointer;
 }
 
-
+h2 {
+  text-align: center;
+}
 .googlemap {
   width: 100%;
 }
