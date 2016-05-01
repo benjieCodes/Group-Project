@@ -14,7 +14,7 @@ var proInfoURL = 'https://json-data.herokuapp.com/darts/info';
 
   var html = infoTemplate(title, des);
 
-  $(".CompanyInfo").append(html);
+  $(".companyInfo").append(html);
 
 });
 
@@ -174,17 +174,22 @@ $.getJSON(companyURL).then (function(res){
 
 
 // creating a function to display a pop up when button 'Add to Cart' is clicked
+var popup = $('.popup');
+var popupButton = $('.showPopup');
 var popupWindow = $('.popupWindow');
-var showPopupButton = $('.showPopup');
 var closePopup = $('.closePopup');
-var popupWindow =
-
 
 //When I click the button it will show up as clicked
-showPopupButton.on('click', function () {
-  popupWindow.removeClass('hidden');
+popupButton.on('click', function () {
+  popup.removeClass('hidden');
 });
 
-closePopup.on('click', function (){
-  popupWindow.addClass('hidden');
-})
+closePopup.on('click', function () {
+  popup.addClass('hidden');
+});
+
+function showPopup () {
+  return `
+
+  `;
+}

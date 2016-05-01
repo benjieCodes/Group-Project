@@ -14,9 +14,11 @@
 }
 
 .carousel {
+  float: left;
+  width: 50%;
+
   img {
-    width: 360px;
-    height:240px;
+    width: 100%;
   }
   .thumbs {
     img {

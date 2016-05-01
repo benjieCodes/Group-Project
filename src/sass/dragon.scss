@@ -1,5 +1,14 @@
 @import "bootstrap";
 
+.main {
+  float: left;
+}
+
+.companyInfo {
+  overflow: auto;
+  float: left;
+  width: 50%;
+}
 
 .testimonial {
   width: 100%;
@@ -32,22 +41,51 @@
   font-weight: bold;
 }
 
-
-.popupWindow {
-
-width: 100%;
-height: 100%;
-overflow: visible;;
-
+.popup {
+  overflow: auto;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: .9;
 }
 
-.hidden {
+.popup .hidden {
   display: none;
 }
 
-.companies h2 {
+.popupContent {
+  color: orange;
+  font-size: 2.3em;
   text-align: center;
+  background: RGBA(195, 200, 204, 1.00);
+  border-radius: 10px;
+  margin: 20% auto;
+  width: 60%;
+  height: 50%;
+  padding: 20px;
+  position: relative;
+
 }
+
+.closePopup {
+  color: white;
+  width: 23px;
+  background: orange;
+  border-radius: 100%;
+  font-size: 17px;
+  position: absolute;
+  top: 4px;
+  right: 5px;
+}
+.closePopup:hover {
+  color: black;
+  cursor: pointer;
+}
+
 
 .googlemap {
   width: 100%;
