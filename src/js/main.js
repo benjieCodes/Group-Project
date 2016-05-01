@@ -155,15 +155,15 @@ $.getJSON(companyURL).then (function(res){
         var first     = $('.first');
         var last      = $('.last');
         var current   = $('.active');
-        //next is the immediate next sibling of the displayed photo
+  //next is the immediate next sibling of the displayed photo
         var next      = current.next();
 
-
+ //if statement to
         if (current.hasClass('last')) {
-          first.addClass('active')
-          last.removeClass('active')
+            first.addClass('active')
+            last.removeClass('active')
 
-          //remove active class from current photo and add the next photo
+  //remove active class from current photo and add the next photo
         } else {
           current.removeClass('active');
           next.addClass('active');
