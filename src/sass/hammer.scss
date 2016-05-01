@@ -1,16 +1,35 @@
 @import 'bootstrap';
 
+.companies {
+
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+
 .companies img {
   margin: 10px 2%;
   width: 20%;
   padding: 10px 2%;
+
 }
 
+.carousel {
+  float: left;
+  width: 50%;
+
+  img {
+    width: 100%;
+  }
+  .thumbs {
+    img {
+      border-radius: 5px;
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
 .carouselImage {
     display:none;
-  img {
-    width: 40%;
-  }
 }
 
 .active {

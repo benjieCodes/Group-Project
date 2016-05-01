@@ -14,7 +14,7 @@ var proInfoURL = 'https://json-data.herokuapp.com/darts/info';
 
   var html = infoTemplate(title, des);
 
-  $(".CompanyInfo").append(html);
+  $(".companyInfo").append(html);
 
 });
 
@@ -43,9 +43,12 @@ var testimonials = [];
 
 // ON PAGE LOAD FUNCTIONS
 getUsers();
+setTimeout( function() {
+  sortUsers();
+}, 500);
 getTestimonials();
 setTimeout( function() {
-  buildObject();
+  buildFinalTemplate();
 }, 1000);
 
 
@@ -64,6 +67,16 @@ function getUsers () {
 }
 
 
+function sortUsers () {
+  users.sort(function(user) {
+    if (user.gender === 'female') {
+      return -1;
+    } else {
+      return 1;
+    }
+  });
+}
+
 function getTestimonials() {
   $.getJSON(testimonyURL).then(function(response){
     response.results.forEach(function(testimonial){
@@ -74,7 +87,7 @@ function getTestimonials() {
 
 
 
-function buildObject () {
+function buildFinalTemplate () {
 
   for (var count = 0; count < users.length; count++) {
     // console.log(count);
@@ -120,40 +133,63 @@ var companyTemplate = function(company) {
   `
 }
 
+var mapHeader = function() {
+  return `
+    <h2>Here's our location - come stalk us!</h2>
+  `;
+}
+
 $.getJSON(companyURL).then (function(res){
-  // console.log(res);
   res.results.forEach(function(company){
-
-    // console.log(company.image_url);
     var html = companyTemplate(company);
-
     $('.companies').append(html);
   });
 
+    $('.companies').append(mapHeader());
+
   });
 
-
+// Carousel------------------------------------------------
 //creating a function to run at an interval changing the carousel picture
   function moveCarousel() {
         var first     = $('.first');
         var last      = $('.last');
         var current   = $('.active');
-        //next is the immediate next sibling of the displayed photo
+  //next is the immediate next sibling of the displayed photo
         var next      = current.next();
 
-        //remove active class from current photo and add the next photo
-
-
+ //if statement to
         if (current.hasClass('last')) {
-          console.log('restart');
-          first.addClass('active')
-          last.removeClass('active')
+            first.addClass('active')
+            last.removeClass('active')
 
+  //remove active class from current photo and add the next photo
         } else {
-          console.log('next class');
           current.removeClass('active');
           next.addClass('active');
         }
 
     };
-    setInterval(moveCarousel, 4000);
+    setInterval(moveCarousel, 3000);
+
+
+// creating a function to display a pop up when button 'Add to Cart' is clicked
+var popup = $('.popup');
+var popupButton = $('.showPopup');
+var popupWindow = $('.popupWindow');
+var closePopup = $('.closePopup');
+
+//When I click the button it will show up as clicked
+popupButton.on('click', function () {
+  popup.removeClass('hidden');
+});
+
+closePopup.on('click', function () {
+  popup.addClass('hidden');
+});
+
+function showPopup () {
+  return `
+
+  `;
+}
