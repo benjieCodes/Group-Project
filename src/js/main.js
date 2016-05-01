@@ -115,12 +115,6 @@ function testimonialTemplate (object) {
           </ul>
   `;
 };
-
-
-
-
-
-
 // ---------------------------------------------------------------------------------------------------//
 //Jeff code for company block
 //interpolate company info so it can be accessed
@@ -158,7 +152,7 @@ $.getJSON(companyURL).then (function(res){
   //next is the immediate next sibling of the displayed photo
         var next      = current.next();
 
- //if statement to
+ //if statement used to to keep carousel photos rotating
         if (current.hasClass('last')) {
             first.addClass('active')
             last.removeClass('active')

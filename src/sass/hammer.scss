@@ -36,3 +36,31 @@
   display: block;
   padding: 10px;
 }
+
+@media screen and (max-width: 600px){
+
+  img.logo{
+    margin-bottom: 0px;
+  }
+
+  .companyInfo {
+    width: 50%;
+  }
+  .carousel {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 500px){
+
+  img.logo{
+    margin-bottom: 0px;
+  }
+
+  .companyInfo {
+    width: 100%;
+  }
+  .carousel {
+    width: 100%;
+  }
+}
