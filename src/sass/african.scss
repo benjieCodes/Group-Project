@@ -56,6 +56,8 @@ footer {
   display: inline-block;
   width: 100%;
   text-align: center;
+  border-top-style: dotted;
+  border-color: orange;
 }
 
 
@@ -69,7 +71,7 @@ footer {
 .low {
   text-align: center;
   margin-top: 10px;
-  color: white;
+  color: grey;
 }
 
 .footpic {
