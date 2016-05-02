@@ -7,6 +7,8 @@ body {
 }
 header {
   width: 100%;
+  border-bottom-style: dotted;
+  border-color: orange;
 }
 
   .header {
@@ -31,10 +33,22 @@ header {
     margin-bottom: 50px;
   }
    //---------------------------------------------HEADER>>>>
+.main {
+  margin-top: 20px;
+}
 
+.socialIcons {
+  font-size: 40px;
+}
 .title {
   font-size: 30px;
   text-align: center;
+
+}
+
+.companies {
+  text-align: center;
+  color: grey;
 }
 // ------------------------------------------SECTION 1 >>>>>
 footer {
