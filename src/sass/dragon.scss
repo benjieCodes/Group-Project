@@ -77,12 +77,13 @@
   background: orange;
   border-radius: 20px;
   border: 1px solid black;
+  margin: 10px;
 }
 
 
 .socialIcons i {
   font-size: 20px;
-  padding: 10px;
+  padding: 20px;
 
   &:hover {
     color: orange;
@@ -111,4 +112,8 @@ h2 {
 }
 .googlemap {
   width: 100%;
+}
+
+.companies img {
+  cursor: pointer;
 }
