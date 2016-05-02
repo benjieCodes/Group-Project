@@ -1,11 +1,13 @@
 # Project Description
 
-This is a basic template for starting projects.
+A Group Project designed to work on merging with different branches via github and to work as a team
+
+## Other requirements
+
+- Be able to communicate about requirements with your teammates
+- Be able to decompose a problem into separate components
+- Learn to work with a team
 
 ## Deployment
 
-To deploy your project just run:
-
-- Make sure you have a lowercase folder name
-- `npm run deploy`
-- You should have a 'surge.sh' link now for your project
+URL: (https://tiy-abrambenjsongsong-group-project.surge.sh)
